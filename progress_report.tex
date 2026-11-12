@@ -27,9 +27,9 @@
 \begin{document}
 \maketitle
 
-\textbf{Research question.} Which player characteristics are associated with a soccer player's market value? Our predictors are age, goals plus assists per 90 minutes (G+A/90), pass completion (\%), minutes played and position (DF, MF, FW, GK).
+\textbf{Research question:} Which player characteristics are associated with a soccer player's market value? Our predictors are age, goals plus assists per 90 minutes (G+A/90), pass completion (\%), minutes played and position (DF, MF, FW, GK).
 
-\textbf{Data.} The Kaggle data set ``Soccer players values and their statistics''~[1] combines market values in euros from transfermarkt.de with player statistics from fbref.com. We use the 2017/18 season.
+\textbf{Data:} The Kaggle data set ``Soccer players values and their statistics''~[1] combines market values in euros from transfermarkt.de with player statistics from fbref.com. We use the 2017/18 season.
 
 \section*{Part A: Data exploration and initial modeling}
 
@@ -163,7 +163,7 @@ Switching to log(value) fixed the main residual problems (Figure~\ref{fig:diag})
     \end{tabular}
 \end{table}
 
-\textbf{Checking assumptions.} For M4, the residuals have roughly constant spread and the normal Q-Q plot is close to a straight line, unlike M1 (Figure~\ref{fig:diag}). No player has a large Cook's distance (largest 0.023). Refitting without the 80 players with Cook's distance above $4/n$ gives similar coefficients. The only change is that the midfielder vs.\ defender difference becomes significant ($p = 0.010$), so we interpret that comparison with caution.
+For M4, the residuals have roughly constant spread and the normal Q-Q plot is close to a straight line, unlike M1 (Figure~\ref{fig:diag}). No player has a large Cook's distance (largest 0.023). Refitting without the 80 players with Cook's distance above $4/n$ gives similar coefficients. The only change is that the midfielder vs.\ defender difference becomes significant ($p = 0.010$), so we interpret that comparison with caution.
 
 \begin{figure}[!htb]
     \centering
@@ -214,10 +214,10 @@ The examples below are predicted values for a typical player at that position (F
     \label{fig:effects}
 \end{figure}
 
-\textbf{Preliminary conclusions.} Players who score or assist more, play more minutes, pass more accurately and are younger tend to have higher market values. Together these factors explain about 60\% of the variation in log market value. These are associations, not causes, and other factors such as league, club and contract length are not in our data. For the final report we plan to check the $\times10$ correction against Transfermarkt and test the model on the 2018/19 season.
+\textbf{Preliminary conclusions:} Players who score or assist more, play more minutes, pass more accurately and are younger tend to have higher market values. Together these factors explain about 60\% of the variation in log market value. These are associations, not causes, and other factors such as league, club and contract length are not in our data. For the final report we plan to check the $\times10$ correction against Transfermarkt and test the model on the 2018/19 season.
 
 \vspace{0.5em}
-{\small\textbf{Code.} \texttt{prepare\_data.R} (cleaning), \texttt{make\_figures.R} (Part A), \texttt{part2\_models.R} (Part B). AI was used for a small part of cleaning the data, as well as formatting for this PDF progress report.
+{\small\textbf{Code:} \texttt{prepare\_data.R} (cleaning), \texttt{make\_figures.R} (Part A), \texttt{part2\_models.R} (Part B). AI was used for a small part of cleaning the data, as well as formatting for this PDF progress report.
 
     \textbf{References}\\
     {[1]} Kaggle user kriegsmaschine. \emph{Soccer players values and their statistics} (transfermarkt.de and fbref.com merged data, 2017/18--2019/20).\\ \url{https://www.kaggle.com/datasets/kriegsmaschine/soccer-players-values-and-their-statistics}}
